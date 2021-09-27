@@ -1,0 +1,88 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#main-section-div{
+    display: flex;
+    align-items: center;
+}
+
+.img-section{
+    width: 280px;
+    height: 250px;
+}
+#img{
+    width: 240px;
+    height: 250px;
+
+
+}
+
+.s1{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.main-div{
+    background-color: rgb(255, 255, 255);
+    height: 380px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 4px 5px 20px 5px #888888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#logo{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+ 
+}
+#email{
+    background-color: #f6f6f6;
+
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #f6f6f6;
+}
+#password{
+    background-color: #f6f6f6;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #f6f6f6;
+}
+#button{
+    background-color: #56baed;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    font-size: 15px;
+}
+#button:hover{
+    box-shadow: 1px 1px 10px 1px #56baed;
+}
+
+.s2-div{
+
+    display: flex;
+    justify-content: center;
+    padding-left: 18%;
+}

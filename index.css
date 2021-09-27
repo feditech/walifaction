@@ -1,0 +1,375 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+/* siled button start */
+
+/* siled button end */
+
+/* nav bar  */
+nav{
+    display: flex;
+    color:rgb(19, 19, 19);
+    background-color:rgba(255, 192, 203, 0.034);
+}
+
+.div-logo{
+    margin-left: 58px;
+    margin-top: 4px;
+    margin-bottom: -6px;
+}
+.logo{
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+}
+.nav-icon-div{
+    padding-left: 70%;
+}
+.nav-icon{
+     width: 25px;
+     height: 25px;
+}
+.nav-ul{
+    display: flex;
+   list-style: none;
+   
+}
+.nav-ul>li{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#shopping-logo{
+    width: 20px;
+    height:20px;
+
+
+}.join-nav-div{
+
+    color: #141414;
+    font-size: 12px;
+    line-height: 2px;
+    letter-spacing: .02em;
+    font-weight: 400;
+    text-transform: uppercase;
+   
+    
+}
+.join-nav-div>ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+    height: 4px;
+}
+.join-nav-div>ul>li{
+    padding: 10px;
+    margin: 10px;
+}
+a{
+    padding-left: 20px;
+}
+/********** Nav bar end **********/
+/* section-top-card Start */
+.section-top-card{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2%;
+
+}
+h5{
+    background-color: #fff;
+}
+.main-card1{
+    background-image: url(./indexcardpic/mainwomem.jpg) ;
+    background-size: cover !important;
+    justify-content: center;
+    background-repeat: no-repeat !important;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.main-card{
+    background-image: url(./indexcardpic/erturel.jpg);
+    justify-content: center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.main-card3{
+    background-image: url(./indexcardpic/kid.jpg);
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.hover-card{
+    background-color: #d4d3d3;
+    opacity: 0.8;
+    text-align: center;
+    width: 80%;
+    height: 90%;
+    
+}
+.hover-card>ul{
+    color: #141414;
+    margin-bottom: 2%;    
+    font-size: 15px;
+    margin-top: 20px;
+    list-style: none;
+}
+
+/* section-top-card End */
+
+/* s1 */
+
+.s1{
+    display: flex;
+
+    justify-content: center;
+}
+.s1-div{
+    display: flex;
+    width: 40%;
+}
+h4{
+    padding: 2%;
+}
+
+/* s1 */
+/* ********** slider-section************/
+
+
+/*********** slider-section End************* */
+
+/*  */
+.card-heding{
+    margin-top: 40px;
+    font-size: 60px;
+}
+/*  */
+
+/***** Card Section  Start *******/
+.section-card{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.card{
+    margin-bottom: 2%;
+}
+.card-img-top{
+    height: 250px;
+}
+
+/****** CARD Section End *******/
+
+
+
+
+
+
+/* footer */
+
+.hr{
+    margin: 0%;
+}
+
+.footer-s1{
+    display: flex;
+    background-color:#26272b;
+    color: white;
+}
+#p-text{
+    width: 240px;
+}
+.footer-contact{
+    margin: auto;
+}
+.footer-contact>ul>li{
+    list-style: none;
+    padding-top: 1px;
+}
+#social-h1{
+    padding-bottom: 50px;
+}
+
+.footer-s2{
+
+    text-align: center;
+    font-size: 25px;
+    background-color:#26272b;
+    color: #ffff;
+
+
+}
+#s2-p{
+    margin: 0%;
+}
+/* footer end *
+
+
+
+
+/************** Media Query Start********** */
+@media only screen and (min-width: 1020px){
+    .nav-button{
+        display: none !important;
+    }
+
+}
+
+@media only screen and (max-width: 1020px){
+    /* navbar */
+    .join-nav-div{
+        display: none;
+    }
+    .nav-icon-div{
+        padding-left: 60%;
+    }
+    .main-card{
+        width: 20% !important;
+        /* height: 180% !important; */
+        background-size: 100%  !important;
+    }
+    .main-card1{
+        width: 20% !important;
+        background-size: 100%  !important;
+        
+        
+    }
+    .main-card3{
+        width: 20% !important;
+        background-size: 100%  !important;
+    }
+   
+  
+}
+
+
+
+@media only screen and (max-width: 520px){
+
+    /* nav bar  */
+    .input-div{
+        display: none;
+    }
+    .join-nav-div{
+        display: none;
+    }
+    .nav-icon-div{
+        padding-left: 2%;
+    }
+   
+
+    .logo{
+        width: 50px;
+        height: 50px;
+    }
+    nav{
+        overflow: hidden;
+       background-color: rgb(255, 255, 255);
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 1;
+    }
+    /* nav bar end */
+
+
+    /* s1 */
+
+.s1{
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+}
+h4{
+    font-size: 100%;
+}
+.slider{
+  
+    height: 200px;
+}
+.w-100{
+    margin-top: 4%;
+    height: 250px !important;
+}
+.s1-div{
+    width: 100%;
+    justify-content: center;
+}
+.s1-div>ul{
+    display: flex;
+    list-style: none;
+}
+.s1-div>ul>li{
+   padding-left: 5%;
+   width: auto;
+   font-size:15px;
+   font-weight: 500;
+}
+/* S1 end */
+    .card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 150px !important;
+        margin-bottom: 2%;
+        border: none !important;
+        height: 260px;
+        
+        
+    }
+    .btn-primary{
+        /* display: none; */
+        font-size: 8px;
+    }
+    .card-title{
+        font-size: 14px;
+    }
+   
+    .card-img-top{
+        height: 140px;
+    }
+    .section-top-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .top-card-w{
+        width: 350px !important;
+        height: 256px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-s1-div1{
+        display: none;
+    }
+    #social-h1{
+        font-size: 27px;
+        padding-bottom: 0%;
+    }
+    .footer-img{
+        width: 60px;
+    }
+    .footer-contact>ul>li{
+        font-size: 10px;
+    }
+
+}

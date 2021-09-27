@@ -1,0 +1,128 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.main-section{
+    
+    background-image: url(background/footer\ img.jpg);
+}
+
+#main-section-div{
+    margin-top: 2% ;
+    display: flex;
+    align-items: center;
+}
+
+.s1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.main-div{
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 4px 5px 20px 5px #888888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#logo{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    
+}
+.input{
+    background-color: #f6f6f6;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 2px solid #f6f6f6;
+}
+#password{
+    background-color: #f6f6f6;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #f6f6f6;
+}
+#button{
+    background-color: #56baed;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    font-size: 15px;
+}
+#button:hover{
+    box-shadow: 1px 1px 10px 1px #56baed;
+}
+
+.para-div>p{
+  color:#8e8e8e ;  
+  font-weight: 400;
+  font-size: 14px;
+  width: 299px;
+}
+
+
+
+
+
+
+.s1{
+    justify-content: center;
+    text-align: center;
+   margin-top: 2%;
+   margin-bottom: 4%;
+}
+h4{
+    color: rgb(255, 80, 36);
+}
+/* */
+.para-div{
+    display: flex;
+    justify-content: center;
+}
+
+/*  */
+.s2{
+    margin-top: 22px;
+   margin-left: 18%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+}
+.s2-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.appstore{
+    width: 24%;
+}
+.playstore{
+    width: 24%;
+}
+
+.s-div{
+    margin-left: 29%;
+    display: flex;
+    justify-content: center;
+    padding-left: 18%;
+}
