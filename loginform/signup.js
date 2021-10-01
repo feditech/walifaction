@@ -18,19 +18,27 @@ let intervalId = setInterval(function() {
 
 // FIRE BASE AUTH FOR SING UP *********** 
 
-let singin = ()=> {
+let signup = ()=> {
     let email=document.getElementById("email");
     let password=document.getElementById("password");
+    let username = document.getElementById("username");
+    let phone = document.getElementById("phone")
     firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
   .then((userCredential) => {
     // Signed in 
     var user = userCredential.user;
-    console.log(userCredential)
-    setTimeout(()=>{
-      window.location = "../login from/login-from.html"
-  },2000)
+    firebase.database().ref(`users/${user.uid}`).set({
+      Email: email.value,
+      UserName: username.value,
+      Phone: phone.value 
+    }).then(()=>{
+      setTimeout(()=>{
+        window.location = "../loginform/login.html"
+    },0)
+    })
+    
 
- swal("Good job!", "You clicked the button!", "success");
+ swal("Good job!", "Sign up Successful", "success");
    
   })
   .catch((error) => {

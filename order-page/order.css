@@ -3,7 +3,10 @@
     font: status-bar;
     padding: 0%;
 }
-
+.join-nav-div ul li a{
+    text-decoration: none !important;
+    color: #141414 !important;
+}
 /* nav bar  */
 
 nav{

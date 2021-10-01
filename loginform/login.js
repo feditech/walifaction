@@ -10,10 +10,16 @@ let login = ()=> {
     var user = userCredential.user;
     console.log("user login sucessfuly")
     setTimeout(()=>{
-      window.location = "../index.html"
+      if(user.email=="f@g.com"){
+        window.location = "../uploaditems/dashboard.html"
+      }
+      else{
+        window.location = "../index.html"
+      }
+      
   },2000)
 
- swal("Good job!", "You clicked the button!", "success");
+ swal("Good job!", "Login Sucessful", "success");
    
     // ...
   })

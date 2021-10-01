@@ -5,27 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="singin.css" />
+    <link rel="stylesheet" href="signup.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyAIX-s0xlJle5E1PWQwg170PGzKx5rf6Yw",
-      authDomain: "hackathon-2fbc0.firebaseapp.com",
-      projectId: "hackathon-2fbc0",
-      storageBucket: "hackathon-2fbc0.appspot.com",
-      messagingSenderId: "11065913113",
-      appId: "1:11065913113:web:a877942c8149aff5405f88",
-      measurementId: "G-F6LX3XTZZD"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    // firebase.analytics();
-  </script>
+   
   </head>
   <body>
     
@@ -34,7 +17,7 @@
 
     <section class="s1">
       <div>
-        <h1>Welcom to wali Faction</h1>
+        <h1>Welcome to wali Faction</h1>
         <h4 id="heading">Men</h4>
       </div>
     </section>
@@ -45,20 +28,24 @@
       <div class="main-div">
         <div><img src="/logo/f001d2b4-c335-45b5-956c-db54b1ef34c1.jpg" alt="" id="logo"></div>
         <div>
-          <input type="text" name="" class="input" placeholder="user name" />
+          <input type="text"  name="" class="input" id="username" placeholder="user name" />
         </div>
         <div>
             <input type="email" name="" class="input" id="email"  placeholder="e-mail" />
           </div>
           <div>
-            <input type="number" name="" class="input" placeholder="phone" />
+            <input type="number" name="" class="input" id="phone" placeholder="phone" />
           </div>
         <div>
           <input type="password" name="" id="password" placeholder="password" />
         </div>
-        <div><button onclick="singin()" id="button">sing in </button></div>
+        <div><button onclick="signup()" id="button">sign up </button></div>
         <br>
+
         <hr>
+        <div class="s2-div">
+          <p>Don't have an account?</p><a href="login-from.html">login</a>
+        </div>
         <div class="para-div">
           <p>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</p>
         </div>
@@ -67,18 +54,11 @@
     </section>
   </div>  
 
- 
-  <section>
-    <div class="s-div">
-      <p>Don't have an account?</p><a href="login-from.html">login</a>
-    </div>
-  </section>
-
   
-
+ 
   <section class="s2">
-    <div class="s2-div"><img class="appstore" src="/login from/appstore/app.png" alt="">
-    <img class="playstore" src="/login from/appstore/playstor.png" alt=""></div>
+    <div class="s2-div"><img class="appstore" src="/loginform/appstore/app.png" alt="">
+    <img class="playstore" src="/loginform/appstore/playstor.png" alt=""></div>
   </section>
 
   </body>
@@ -91,6 +71,29 @@
     crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  <script src="singin.js"></script>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-storage.js"></script>
+ 
+   <script>
+ 
+     const firebaseConfig = {
+       apiKey: "AIzaSyAddRrqIVDe_AN-A-aSn_0jQx0p7oyvhMo",
+       authDomain: "wali-faction.firebaseapp.com",
+       projectId: "wali-faction",
+       storageBucket: "wali-faction.appspot.com",
+       messagingSenderId: "773751867235",
+       appId: "1:773751867235:web:51fbad4f033fc29a133556",
+       measurementId: "G-NSNJNPBGTC"
+     };
+ 
+     firebase.initializeApp(firebaseConfig);
+   </script>
+ 
+
+  <script src="signup.js"></script>
   
 </html>

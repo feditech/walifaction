@@ -2,6 +2,10 @@
     margin: 0%;
     padding: 0%;
 }
+.join-nav-div ul li a{
+    text-decoration: none !important;
+    color: #141414 !important;
+}
 /* siled button start */
 
 /* siled button end */
@@ -91,6 +95,7 @@ h5{
     display: flex;
     align-items: center;
     border: none;
+    
 }
 .main-card{
     background-image: url(./indexcardpic/erturel.jpg);
@@ -100,6 +105,7 @@ h5{
     display: flex;
     align-items: center;
     border: none;
+    cursor: pointer;
 }
 
 .main-card3{
@@ -117,7 +123,7 @@ h5{
     text-align: center;
     width: 80%;
     height: 90%;
-    
+    cursor: pointer;
 }
 .hover-card>ul{
     color: #141414;
