@@ -40,12 +40,12 @@ let uploadFiles = (file) => {
     })
 }
 
-let logout = () => {
-    firebase.auth().signOut()
-        .then(() => {
-            window.location = "login.html"
-        })
-}
+// let logout = () => {
+//     firebase.auth().signOut()
+//         .then(() => {
+//             window.location = "login.html"
+//         })
+// }
 
 // let getUID = () => {
 //     return new Promise((resolve) => {
@@ -157,68 +157,114 @@ let deleteProduct = (productid, category) => {
     window.location = "#"
 }
 
-// let getOrders = async (status) => {
-//     console.log(status)
-//     let uid = await getUID();
-//     let orderList = document.getElementById('order-list')
-//     firebase.database().ref(`orders/${uid}`).on('child_added', (data) => {
-//         firebase.database().ref(`user/${data.val().customerUID}`).once('value', (snapshot) => {
-//             let orderDetail = { customer: { ...snapshot.val() }, order: { ...data.val() } }
-//             if (status === orderDetail.order.status) {
 
-//                 orderList.innerHTML += `
-//                 <tr>
-//                 <th scope="row">1</th>
-//                 <td>${orderDetail.customer.username}</td>
-//                 <td>${orderDetail.customer.email}</td>
-//                 <td><span class="${orderDetail.order.status === 'pending' ? 'pending-status': orderDetail.order.status === "accepted" ? 'status-accepted' : "status-delivered"}">${orderDetail.order.status}</span></td>
-//                 <td>
-//                 <button data-toggle="modal" data-target="#exampleModal"
-//                 class="small-btn">View</button>
-//                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-//                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-//                 <div class="modal-dialog" role="document">
-//                 <div class="modal-content">
-//                 <div class="modal-header">
-//                 <h5 class="modal-title" id="exampleModalLabel">Order Details
-//                 </h5>
-//                 <button type="button" class="close" data-dismiss="modal"
-//                 aria-label="Close">
-//                 <span aria-hidden="true">&times;</span>
-//                 </button>
-//                 </div>
-//                 <div class="modal-body">
-//                 <table class="table">
-//                 <tr>
-//                 <th scope="col">#</th>
-//                 <th scope="col">Image</th>
-//                 <th scope="col">Name</th>
-//                 <th scope="col">Price</th>
-//                 <th scope="col">Qty</th>
-//                 </tr>
-//                 <tr>
-//                 <td>1</td>
-//                 <td>
-//                 <img class="dish-image" width="50" src="${orderDetail.order.image}" />
-//                 </td>
-//                 <td>${orderDetail.order.name}</td>
-//                 <td>Rs ${orderDetail.order.price}</td>
-//                 <td>1</td>
-//                 </tr>
-//                 </table>
-//                 </div>
-//                 <div class="modal-footer">
-//                 <button type="button" class="mybutton"
-//                 data-dismiss="modal">Close</button>
-//                 <button type="button" class="mybutton">Accecpt Order</button>
-//                 </div>
-//                 </div>
-//                 </div>
-//                 </div>
-//                 </td>
-//                 </tr>
-//                 `
-//             }
-//         })
-//     })
+
+
+
+
+
+let getOrders = async (status) => {
+    console.log(status)
+    // let uid = await getUID();
+    let orderList = document.getElementById('order-list')
+    firebase.database().ref(`orders`).on('child_added', (data) => {
+        firebase.database().ref(`users/${data.val().customerUID}`).once('value', (snapshot) => {
+            let orderDetail = { customer: { ...snapshot.val() }, order: { ...data.val() } }
+            let orderid= data.key
+            let customerEmail = snapshot.val().Email;
+            if (status === orderDetail.order.OrderStatus) {
+
+                orderList.innerHTML += `
+                <tr>
+                <th scope="row">1</th>
+                <td>${orderDetail.customer.UserName}</td>
+                <td>${orderDetail.customer.Email}</td>
+                <td><span class="${orderDetail.order.OrderStatus === 'pending' ? 'pending-status': orderDetail.order.OrderStatus === "accepted" ? 'status-accepted' : "status-delivered"}">${orderDetail.order.OrderStatus}</span></td>
+                <td>
+                <button data-toggle="modal" data-target="#exampleModal"
+                class="small-btn">View</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Details
+                </h5>
+                <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <table class="table">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Qty</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>
+                <img class="dish-image" width="50" src="${orderDetail.order.Image}" />
+                </td>
+                <td>${orderDetail.order.ItemName}</td>
+                <td>Rs ${orderDetail.order.Price}</td>
+                <td>Rs ${orderDetail.order.Quantity}</td>
+                </tr>
+                </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" id="modalclose" class="mybutton"
+                data-dismiss="modal">Close</button>
+                <button onclick="accepted('${customerEmail}','${orderid}')" type="button" class="mybutton">Accept Order</button>
+                </div>
+                </div>
+                </div>
+                </div>
+                </td>
+                </tr>
+                `
+            }
+        })
+    })
+}
+
+let accepted= (customerEmail,orderid)=>{
+    firebase.database().ref(`orders/${orderid}`).update(
+        {OrderStatus: 'accepted'}
+    )
+    document.getElementById("modalclose").click()
+    setTimeout(()=>{
+        window.open(`mailto:${customerEmail}?subject=order accepted&body=congratulation Your order is accepted`);
+      },2000)
+       
+    
+    }  
+
+
+// let rejected= ()=>{
+//     firebase.database().ref(`orders/${orderid}`).update(
+//         {OrderStatus: 'accepted'}
+//     )
+//     document.getElementById("modalclose").click()
+//     setTimeout(()=>{
+//         window.open(`mailto:${customerEmail}?subject=order accepted&body=congratulation Your order is accepted`);
+//       },2000)
+       
+   
 // }
+
+
+let delivered= ()=>{
+    firebase.database().ref(`orders/${orderid}`).update(
+        {OrderStatus: 'delivered'}
+    )
+    setTimeout(()=>{
+        document.getElementById("modalclose").click()
+        window.open(`mailto:${customerEmail}?subject=order Delivered&body=congratulation Your order is delivered`);
+      },2000)
+       
+   
+}

@@ -11,7 +11,7 @@ let login = ()=> {
     console.log("user login sucessfuly")
     setTimeout(()=>{
       if(user.email=="f@g.com"){
-        window.location = "../uploaditems/dashboard.html"
+        window.location = "../adminpanel/additems.html"
       }
       else{
         window.location = "../index.html"
